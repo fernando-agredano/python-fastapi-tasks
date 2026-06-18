@@ -1,4 +1,4 @@
-# P1 — Task Manager API
+# Python — Task Manager API
 ## FastAPI · Arquitectura en Capas (Layered / N-Tier)
 
 ---
@@ -6,7 +6,7 @@
 ## Estructura del proyecto
 
 ```
-p1-fastapi-tasks/
+python-fastapi-tasks/
 ├── main.py                         # Punto de entrada
 ├── requirements.txt
 ├── tasks.db                        # Se genera automáticamente
@@ -224,7 +224,7 @@ Valores válidos para `status`: `"pending"` · `"in_progress"` · `"done"`
 ## Colección Postman (importar)
 
 Puedes importar esta colección directamente en Postman.  
-Guarda el siguiente JSON como `p1-tasks.postman_collection.json` e impórtalo:
+Guarda el siguiente JSON como `python-tasks.postman_collection.json` e impórtalo:
 
 ```json
 {
