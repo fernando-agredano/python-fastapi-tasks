@@ -300,3 +300,29 @@ Guarda el siguiente JSON como `python-tasks.postman_collection.json` e impórtal
 ```
 
 > El request de Login tiene un script de test que guarda el token automáticamente en la variable `{{token}}` — así no tienes que copiarlo manualmente en cada request.
+
+---
+
+## Despliegue en Render
+
+Este proyecto está desplegado como un **Web Service** en [Render](https://render.com).
+
+### Pasos para desplegar
+
+1. En el dashboard de Render, crea un nuevo **Web Service** y conecta el repositorio.
+
+2. Configura el servicio:
+
+   | Campo | Valor |
+   |-------|-------|
+   | **Environment** | `Python 3` |
+   | **Build Command** | `pip install -r requirements.txt` |
+   | **Start Command** | `uvicorn main:app --host 0.0.0.0 --port $PORT` |
+
+3. No se requieren variables de entorno adicionales. La base de datos `tasks.db` y la `SECRET_KEY` para JWT usan valores por defecto definidos en el código.
+
+   > Para un entorno de producción real se recomienda definir `SECRET_KEY` como variable de entorno en el dashboard de Render.
+
+4. Una vez desplegado, copia la URL pública (ej. `https://python-fastapi-tasks.onrender.com`) y pégala en el panel de ajustes de **API Explorer**.
+
+> FastAPI genera automáticamente documentación interactiva en `/docs` — también accesible en la URL de producción.
